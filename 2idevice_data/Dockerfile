@@ -5,7 +5,7 @@
 
 FROM busybox
 
-RUN     mkdir /data
+RUN     mkdir -p /data/out
 VOLUME  /data
 
 CMD  ["true"]
