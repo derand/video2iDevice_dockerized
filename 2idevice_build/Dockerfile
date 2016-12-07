@@ -4,7 +4,7 @@
 #
 
 FROM        derand/ffmpeg_build
-MAINTAINER  Andrey Derevyagin
+MAINTAINER  Andrei Derevyagin
 
 ENV LANG=C.UTF-8 \
     LANGUAGE=en_US:en \

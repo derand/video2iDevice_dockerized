@@ -5,7 +5,7 @@
 
 #FROM        busybox:glibc
 FROM        derand/base
-MAINTAINER  Andrey Derevyagin
+MAINTAINER  Andrei Derevyagin
 
 ADD ffmpeg.tar.gz /
 
