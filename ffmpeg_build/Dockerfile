@@ -186,7 +186,8 @@ RUN     export buildDeps="autoconf \
         --enable-nonfree \
         --disable-debug \
         --enable-small \
-        --enable-openssl && \
+        --enable-openssl \
+        --enable-libfreetype && \
         make && \
         make install && \
 #        cd tools && \
