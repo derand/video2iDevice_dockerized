@@ -1,6 +1,7 @@
 #
 # docker build --rm -t derand/2idevice .
 # docker run -it --volumes-from 2idevice_data --name 2idevice derand/2idevice
+# docker run -it -v /media/transmission:/data --name 2idevice derand/2idevice
 #
 
 FROM        derand/ffmpeg
