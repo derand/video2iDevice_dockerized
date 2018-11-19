@@ -217,12 +217,11 @@ RUN     DIR=$(mktemp -d) && cd ${DIR} && \
 
 # fonts
 RUN     cd /tmp && \
-#        rm -fr /tmp/* && \
         mkdir /usr/share/fonts/root_fonts && \
         ln -s /usr/share/fonts/root_fonts /root/.fonts && \
+        curl -sL https://github.com/derand/video2iDevice_dockerized/raw/feature/f/fonts.tar.gz | tar -zx --strip-components=1 -C /usr/share/fonts/root_fonts/
 #
-        curl -sL https://github.com/derand/video2iDevice_dockerized/raw/feature/f/fonts.tar.gz | tar -zx --strip-components=1 -C /usr/share/fonts/root_fonts/ && \
-        rm -f /ffmpeg.tar.gz && \
+RUN     rm -f /ffmpeg.tar.gz && \
         ldd ${SRC}/bin/ff* | grep "=>" | sed 's/^\s*//' | cut -f2 -d\> | cut -f1 -d\( | sed 's/\.so\..*/\.so\*/' | while read line ; do echo $line | xargs -n1; done | sort -u | xargs tar -zcvf /ffmpeg.tar.gz ${SRC}/bin/ff* /usr/share/fontconfig /usr/share/fonts /root/.fonts
 
 
