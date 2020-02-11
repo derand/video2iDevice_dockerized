@@ -11,6 +11,11 @@ ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
     PATH="/video2iDevice:${PATH}"
 
+# fonts
+RUN     mkdir /usr/share/fonts/root_fonts && \
+        ln -s /usr/share/fonts/root_fonts /root/.fonts && \
+        curl -sL https://github.com/derand/video2iDevice_dockerized/raw/feature/f/fonts.tar.gz | tar -zx --strip-components=1 -C /usr/share/fonts/root_fonts/
+
 RUN apt-get install -y --no-install-recommends mkvtoolnix gpac atomicparsley mediainfo unzip locales && \
         curl -sL -o /tmp/2id.zip https://github.com/derand/video2iDevice/archive/develop.zip && \
         unzip /tmp/2id.zip -d / && \
