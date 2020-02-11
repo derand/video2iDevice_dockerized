@@ -1,4 +1,6 @@
 
+### [CompilationGuide](https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu)
+
 PREFIX=/usr/local
 BINDIR=$PREFIX/bin
 
